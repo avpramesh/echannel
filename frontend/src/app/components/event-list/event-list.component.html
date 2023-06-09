@@ -1,0 +1,34 @@
+<div class="list row">
+    <div class="col-md-8">
+      <table>
+        <tr><th>Created Time</th>
+            <th>Priority</th>
+            <th>Source BU</th>
+            <th>Reference</th>
+            <th>DCP Reference</th>
+            <th>Account Name</th>
+            <th>Trans.Ccy</th>
+            <th>Trans.Amt</th>
+            <th>Locked By</th>
+        </tr>
+
+        <tr *ngFor="let tutorial of tutorials; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveTutorial(tutorial, i)">
+        <td> {{ tutorial.created_on }}</td>
+        <td>{{ tutorial.priority }}</td>
+        <td>{{ tutorial.source_bu }}</td>
+        <td>{{ tutorial.business_key }}</td>
+        <td>{{ tutorial.dcp_reference }}</td>
+        <td>{{ tutorial.account_name }}</td>
+        <td>{{ tutorial.transaction_currency }}</td>
+        <td>{{ tutorial.transaction_amount }}</td>
+        <td>{{ tutorial.locked_by }}</td>
+
+        </tr>
+      </table>
+    </div>
+    
+    
+  </div>
+  

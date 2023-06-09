@@ -1,0 +1,167 @@
+<!-- <ngx-spinner type="ball-spin"></ngx-spinner> -->
+
+<div class="page-wrapper">
+  <!-- MENU SIDEBAR-->
+  <aside class="menu-sidebar d-none d-lg-block">
+    <div class="logo">
+      <a routerLink="/echannels">
+        Logo echannels
+      </a>
+    </div>
+    <div class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a routerLink="/echannels" class="nav-link">Echannel Verification</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/eventdata" class="nav-link">Echannel Verification Data</a>
+        </li>
+      </div>
+  </aside>
+  <!-- END MENU SIDEBAR-->
+
+  <!-- PAGE CONTAINER-->
+  <div class="page-container">
+    <!-- HEADER DESKTOP-->
+    <header class="header-desktop">
+      <div class="section-content section-content-p30">
+        <div class="container-fluid">
+          <div class="header-wrap">
+            <!-- <app-search></app-search> -->
+
+            <!-- <app-login-status></app-login-status> -->
+
+            <!-- <app-cart-status></app-cart-status> -->
+          </div>
+          <div class="account-wrap"></div>
+        </div>
+      </div>
+    </header>
+    <!-- END HEADER DESKTOP-->
+    <router-outlet></router-outlet>
+</div>
+</div>
+    <!-- MAIN CONTENT-->
+    <div class="container">
+    <form>
+        <fieldset style="height: 50%;width: 80%;border: 1cap;background-color:white">
+            <legend>Documents:</legend>
+        <div class="row form-group">
+          <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Reference</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control form-control-sm" id="business_key" name="business_key" required [(ngModel)]="eventsource.business_key">
+          </div>
+        </div>
+    </fieldset>
+
+    <fieldset style="height: 50%;width: 80%;border: 1cap;background-color:white">
+        <legend>Transfer Details:</legend>
+    <div class="row form-group">
+      <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Currency</label>
+      <div class="col-sm-3">
+        <select class="custom-select my-1 mr-sm-2" id="transaction_currency" name="transaction_currency" required [(ngModel)]="eventsource.transaction_currency" >
+            <option selected>Choose...</option>
+            <option value="muritiusdollor">Mauritius Currency</option>
+            <option value="indiancur">Indian Rupees</option>
+            <option value="usdollor">US Dollor</option>
+            
+          </select>
+      </div>
+      <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Amount</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control form-control-sm" id="transaction_amount" name="transaction_amount"  required [(ngModel)]="eventsource.transaction_amount">
+        </div>
+    </div>
+    
+</fieldset>
+
+<fieldset style="height: 50%;width: 80%;border: 1cap; border-radius: 1cqi;background-color:white">
+    <legend style="border: 1cm;">Debit Account Details:</legend>
+<div class="row form-group">
+  <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Account No</label>
+  <div class="col-sm-3">
+    <input type="number" class="form-control form-control-sm" id="debit_account_number" name="debit_account_number"  required [(ngModel)]="eventsource.debit_account_number">
+  </div>
+  <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Account Currency</label>
+  <div class="col-sm-3">
+    <input type="text" class="form-control form-control-sm" id="account_currency" name="account_currency" required [(ngModel)]="eventsource.account_currency">
+  </div>
+</div>
+<div class="row form-group">
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Name</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control form-control-sm" id="account_name" name="account_name" required [(ngModel)]="eventsource.account_name">
+    </div>
+  </div>
+</fieldset>
+
+<fieldset style="height: 50%;width: 80%;border: 1cap; border-radius: 1cqi;background-color:white">
+    <legend>Beneficiary Details</legend>
+    <div class="row form-group">
+        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Name</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control form-control-sm" id="beneficiary_name" name="beneficiary_name" required [(ngModel)]="eventsource.beneficiary_name">
+        </div>
+      </div>
+</fieldset>
+
+<fieldset style="height: 50%;width: 80%;border: 1cap; border-radius: 1cqi;background-color:white">
+    <legend>Informative Markers</legend>
+    <div class="row form-group">
+        <label for="colFormLabelSm" class="col-sm-6 col-form-label col-form-label-sm">Customer Informative marker description</label>
+        <div class="col-sm-10">
+          <textarea class="form-control form-control-sm" id="cust_info_mkr" name="cust_info_mkr" required [(ngModel)]="eventsource.cust_info_mkr"></textarea>
+        </div>
+      </div>
+      <div class="row form-group">
+        <label for="colFormLabelSm" class="col-sm-6 col-form-label col-form-label-sm">Account Informative marker description</label>
+        <div class="col-sm-10">
+          <textarea class="form-control form-control-sm" id="account_info_mkr" name="account_info_mkr" required [(ngModel)]="eventsource.account_info_mkr" ></textarea>
+        </div>
+      </div>
+</fieldset>
+<fieldset style="height: 50%;width: 80%;border: 1cap; border-radius: 1cqi;background-color:white">
+    <legend>Call Back Info</legend>
+    <div class="row form-group">
+        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Outcome</label>
+        <div class="col-sm-6">
+            <select class="custom-select my-1 mr-sm-2" id="outcome" name="outcome" required [(ngModel)]="eventsource.outcome">
+                <option selected>Choose...</option>
+                <option value="muritiusdollor">Mauritius Currency</option>
+                <option value="indiancur">Indian Rupees</option>
+                <option value="usdollor">US Dollor</option>
+                
+              </select>
+        </div>
+        
+      </div>
+      <div class="row form-group">
+        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Extension</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control form-control-sm" id="extension" name="extension" required [(ngModel)]="eventsource.extension">
+        </div>
+          <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Contact Person</label>
+          <div class="col-sm-3">
+            <input type="text" class="form-control form-control-sm" id="contact_person" name="contact_person" required [(ngModel)]="eventsource.contact_person">
+          </div>
+        </div>
+        <div class="row form-group">
+            <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Customer Called on</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control form-control-sm" id="customer_called_on" name="customer_called_on" required [(ngModel)]="eventsource.customer_called_on">
+            </div>
+          </div>
+    <div class="row form-group">
+        <label for="colFormLabelSm" class="col-sm-6 col-form-label col-form-label-sm">comments</label>
+        <div class="col-sm-10">
+          <textarea class="form-control form-control-sm" id="comment" name="comment" required [(ngModel)]="eventsource.comment"></textarea>
+        </div>
+      </div>
+      
+</fieldset>
+<button (click)="saveEventSource()"  class="btn btn-success">Submit</button> <button class="btn btn-failure">Reset</button>
+
+      </form>
+      </div>
+<!-- END PAGE CONTAINER-->
+
+
